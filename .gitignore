@@ -1,0 +1,22 @@
+# Virtual environment
+.venv/
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Node
+node_modules/
+
+# App runtime files
+.backend.pid
+.frontend.pid
+.backend.log
+.frontend.log
+uploads/
+
+# OS
+.DS_Store
+Thumbs.db

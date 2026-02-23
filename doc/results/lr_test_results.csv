@@ -1,0 +1,2 @@
+accuracy,precision,recall,f1,mcc,auc,specificity,tn,fp,fn,tp,model,training_time_sec
+0.509320,0.255843,0.417671,0.317315,-0.034588,0.469387,0.543741,721,605,290,208,lr,0.380000

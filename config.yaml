@@ -1,0 +1,49 @@
+# Model Configuration
+models:
+  knn:
+    n_neighbors: 5
+    weights: 'distance'
+  svm:
+    kernel: 'rbf'
+    C: 1.0
+  rf:
+    n_estimators: 100
+    max_depth: 10
+  xgboost:
+    n_estimators: 100
+    learning_rate: 0.1
+  adaboost:
+    n_estimators: 50
+  lr:
+    max_iter: 1000
+  cnn:
+    dropout: 0.3
+    learning_rate: 0.0001
+    epochs: 100
+    batch_size: 32
+    patience: 20
+
+# Training Configuration
+training:
+  cv_folds: 10
+  random_seed: 42
+
+# Paths
+paths:
+  data_raw: 'data/raw/'
+  data_processed: 'data/processed/'
+  models: 'models/'
+  phage_library: 'data/phage_library/'
+  interactions: 'data/interactions_data.csv'
+  results: 'doc/results/'
+
+# API Configuration
+api:
+  host: '0.0.0.0'
+  port: 8000
+  upload_folder: 'uploads/'
+  max_file_size: 10485760  # 10MB
+
+# Logging Configuration
+logging:
+  level: 'INFO'

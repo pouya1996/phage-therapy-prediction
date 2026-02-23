@@ -1,0 +1,2 @@
+accuracy,precision,recall,f1,mcc,auc,specificity,tn,fp,fn,tp,model,training_time_sec
+0.658443,0.366167,0.343373,0.354404,0.122644,0.618017,0.776772,1030,296,327,171,adaboost,4.840000
