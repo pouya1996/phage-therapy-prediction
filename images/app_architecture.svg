@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <linearGradient id="feGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A90D9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#357ABD;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="beGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#59A14F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4E8F45;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="mlGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8833A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D4722E;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="userGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#B07AA1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9C6891;stop-opacity:1" />
+    </linearGradient>
+    <filter id="sh" x="-2%" y="-2%" width="104%" height="106%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2.5" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#555"/>
+    </marker>
+    <marker id="arrUp" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto">
+      <path d="M8,0 L0,3 L8,6 Z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="520" fill="#FAFAFA" rx="8"/>
+
+  <!-- Title -->
+  <text x="450" y="32" text-anchor="middle" font-size="18" font-weight="700" fill="#222">Application Architecture</text>
+
+  <!-- ============================================================ -->
+  <!-- USER / BROWSER -->
+  <!-- ============================================================ -->
+  <rect x="340" y="52" width="220" height="50" rx="10" fill="url(#userGrad)" filter="url(#sh)"/>
+  <text x="450" y="74" text-anchor="middle" font-size="13" font-weight="600" fill="#fff">Clinician / Browser</text>
+  <text x="450" y="92" text-anchor="middle" font-size="11" fill="#E8D4E0">Upload FASTA · View Results</text>
+
+  <!-- Arrow down -->
+  <line x1="450" y1="102" x2="450" y2="128" stroke="#555" stroke-width="1.8" marker-end="url(#arr)"/>
+  <line x1="450" y1="128" x2="450" y2="102" stroke="#555" stroke-width="1.8" marker-start="url(#arrUp)" stroke-dasharray="0" opacity="0"/>
+  <!-- Bidirectional label -->
+  <text x="470" y="120" font-size="9" fill="#888">HTTP</text>
+
+  <!-- ============================================================ -->
+  <!-- TIER 1 — FRONTEND -->
+  <!-- ============================================================ -->
+  <rect x="60" y="130" width="780" height="105" rx="10" fill="#E8F0FE" stroke="#4A90D9" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="450" y="152" text-anchor="middle" font-size="14" font-weight="700" fill="#2B5EA7">Frontend — React + Vite (port 3000)</text>
+
+  <!-- Sub-boxes -->
+  <rect x="85" y="162" width="180" height="55" rx="6" fill="url(#feGrad)"/>
+  <text x="175" y="184" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">Dashboard</text>
+  <text x="175" y="200" text-anchor="middle" font-size="10" fill="#BDD7F5">Training metrics · Charts</text>
+
+  <rect x="285" y="162" width="180" height="55" rx="6" fill="url(#feGrad)"/>
+  <text x="375" y="184" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">Prediction View</text>
+  <text x="375" y="200" text-anchor="middle" font-size="10" fill="#BDD7F5">Upload FASTA · Model tabs</text>
+
+  <rect x="485" y="162" width="160" height="55" rx="6" fill="url(#feGrad)"/>
+  <text x="565" y="184" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">CV Panel</text>
+  <text x="565" y="200" text-anchor="middle" font-size="10" fill="#BDD7F5">Fold details · Exports</text>
+
+  <rect x="665" y="162" width="155" height="55" rx="6" fill="url(#feGrad)"/>
+  <text x="742" y="184" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">Proxy /api →</text>
+  <text x="742" y="200" text-anchor="middle" font-size="10" fill="#BDD7F5">→ localhost:8000</text>
+
+  <!-- Arrow down -->
+  <line x1="450" y1="235" x2="450" y2="260" stroke="#555" stroke-width="1.8" marker-end="url(#arr)"/>
+  <text x="470" y="252" font-size="9" fill="#888">REST</text>
+
+  <!-- ============================================================ -->
+  <!-- TIER 2 — BACKEND -->
+  <!-- ============================================================ -->
+  <rect x="60" y="262" width="780" height="105" rx="10" fill="#EAF5E8" stroke="#59A14F" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="450" y="284" text-anchor="middle" font-size="14" font-weight="700" fill="#3E7F35">Backend — FastAPI + Uvicorn (port 8000)</text>
+
+  <!-- Sub-boxes -->
+  <rect x="85" y="296" width="200" height="55" rx="6" fill="url(#beGrad)"/>
+  <text x="185" y="318" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">/api/predict</text>
+  <text x="185" y="334" text-anchor="middle" font-size="10" fill="#D4F5D0">Run all models on FASTA</text>
+
+  <rect x="305" y="296" width="200" height="55" rx="6" fill="url(#beGrad)"/>
+  <text x="405" y="318" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">/api/results</text>
+  <text x="405" y="334" text-anchor="middle" font-size="10" fill="#D4F5D0">Training metrics (CV + test)</text>
+
+  <rect x="525" y="296" width="140" height="55" rx="6" fill="url(#beGrad)"/>
+  <text x="595" y="318" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">/api/health</text>
+  <text x="595" y="334" text-anchor="middle" font-size="10" fill="#D4F5D0">Server status</text>
+
+  <rect x="685" y="296" width="135" height="55" rx="6" fill="url(#beGrad)"/>
+  <text x="752" y="318" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">File Handler</text>
+  <text x="752" y="334" text-anchor="middle" font-size="10" fill="#D4F5D0">Upload · Validate</text>
+
+  <!-- Arrow down -->
+  <line x1="450" y1="367" x2="450" y2="392" stroke="#555" stroke-width="1.8" marker-end="url(#arr)"/>
+  <text x="470" y="384" font-size="9" fill="#888">Python</text>
+
+  <!-- ============================================================ -->
+  <!-- TIER 3 — ML PIPELINE -->
+  <!-- ============================================================ -->
+  <rect x="60" y="394" width="780" height="105" rx="10" fill="#FEF0E5" stroke="#E8833A" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="450" y="416" text-anchor="middle" font-size="14" font-weight="700" fill="#B85C1F">ML Pipeline — scikit-learn · XGBoost · TensorFlow</text>
+
+  <!-- Sub-boxes -->
+  <rect x="85" y="428" width="220" height="55" rx="6" fill="url(#mlGrad)"/>
+  <text x="195" y="449" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">Preprocessing</text>
+  <text x="195" y="465" text-anchor="middle" font-size="10" fill="#FFE0C2">FASTA → ORF → Features</text>
+
+  <rect x="325" y="428" width="220" height="55" rx="6" fill="url(#mlGrad)"/>
+  <text x="435" y="449" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">Training</text>
+  <text x="435" y="465" text-anchor="middle" font-size="10" fill="#FFE0C2">CV → Test eval → Prod model</text>
+
+  <rect x="565" y="428" width="255" height="55" rx="6" fill="url(#mlGrad)"/>
+  <text x="692" y="449" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">Prediction</text>
+  <text x="692" y="465" text-anchor="middle" font-size="10" fill="#FFE0C2">Feature extraction → 7 models → Rank</text>
+
+</svg>

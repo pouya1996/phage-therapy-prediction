@@ -45,24 +45,15 @@ interaction at each tested concentration.
 
 ## Architecture
 
-```
-┌──────────────────────────────────────────────────────┐
-│  Frontend  (React + Vite, port 3000)                 │
-│  ├─ Dashboard: training metrics & charts             │
-│  ├─ Prediction: upload FASTA → per-model results     │
-│  └─ Proxy /api → backend                             │
-├──────────────────────────────────────────────────────┤
-│  Backend   (FastAPI + Uvicorn, port 8000)             │
-│  ├─ /api/predict   — run all models on uploaded FASTA │
-│  ├─ /api/results   — training metrics (CV + test)     │
-│  └─ /api/health    — server status                    │
-├──────────────────────────────────────────────────────┤
-│  ML Pipeline  (scikit-learn, XGBoost, TensorFlow)     │
-│  ├─ Preprocessing: FASTA → features                   │
-│  ├─ Training: CV → test eval → production model       │
-│  └─ Prediction: feature extraction → model inference  │
-└──────────────────────────────────────────────────────┘
-```
+### System Overview
+
+![System Architecture](./images/system_architecture.svg)
+
+![Application Architecture](./images/app_architecture.svg)
+
+### Multi-View CNN Architecture
+
+![MV-CNN Architecture](./images/mv_cnn_architecture.svg)
 
 ---
 
